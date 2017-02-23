@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import AddMovie from './add_movie.js'
 
 export default class Movies extends React.Component {
 	constructor(props){
@@ -13,16 +14,19 @@ export default class Movies extends React.Component {
 		return (
 			<div>
 				<div>
-					<span className="glyphicon glyphicon-search"></span>
+					<div className='container'>
+						<AddMovie movies={ this.props.movies }/>
+					</div>
+					<span className='glyphicon glyphicon-search'></span>
 					<input value={ this.state.term } onChange={ (e) => this.setState({ term: e.target.value })} />
 				</div>
 				{
 					movies.map( (movie, i) => {
 						return (
 							<div className='col-sm-6 col-md-3' key={ i }>
-								<div className="panel panel-info">
-									<div className="panel-heading">
-             							<h4 className="panel-title">{ movie.title }</h4>
+								<div className='panel panel-info'>
+									<div className='panel-heading'>
+             							<h4 className='panel-title'>{ movie.title }</h4>
             						</div>
             						<div className="panel-body">
 							 			<h2>{movie.genre}</h2>
@@ -37,7 +41,7 @@ export default class Movies extends React.Component {
 							 			}
 							 			</ul>
 							 		</div>
-							 	<div className="panel-footer">Footer. Delete Button Eventually</div>
+							 	<div className='panel-footer'>Footer. Delete Button Eventually</div>
 							</div>	
 						</div>
 						)

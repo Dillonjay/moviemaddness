@@ -15,7 +15,7 @@ export default class AddMovie extends React.Component {
 	}
 	render() {
 		return (
-			<div className="modal-container col-sm-4">
+			<div className="modal-container col-md-auto">
 				<Button className="btn btn-info btn-lg" onClick={ () => this.setState({ show: true }) }>
 					Add Movie
 				</Button>
@@ -41,11 +41,9 @@ export default class AddMovie extends React.Component {
 		)
 	}
 	add(info) {
-		alert('clicked');
-		console.log('info', info)
 		this.setState({ show: false })
 		var there = this.props.movies.filter(function(movie){
-			return (move.title === info.title && movie.year === info.year)
+			return (movie.title === info.title && movie.year === info.year)
 		})
 		if(there.length) {
 			alert('Sorry, it looks like this movie has already been added.')
@@ -58,7 +56,18 @@ export default class AddMovie extends React.Component {
 				actors: [info.actors]
 			});
 			localStorage.removeItem('movies')
-			localStorage.setItem('movies', JSON.stringify(this.props.movies));		
+			localStorage.setItem('movies', JSON.stringify(this.props.movies));	
+			this.setState({
+				show: false,
+				title: '',
+				genre: '',
+				rating: '',
+				year: '',
+				actors: ''	
+			})	
+			setTimeout(function(){
+   			   window.location.reload();
+			},100); 
 		}
 	}
 }

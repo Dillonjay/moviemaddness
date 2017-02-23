@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from './main.js';
 import Dummy from '../dummy_data.js';
+import Header from './header.js';
 
 if(!localStorage.hasOwnProperty('movies')) localStorage.setItem('movies', JSON.stringify( [] ));
 const Movies = JSON.parse( localStorage.getItem('movies') );
@@ -12,8 +13,9 @@ const Movies = JSON.parse( localStorage.getItem('movies') );
 
 const App = () => (
 	<div>
+		<Header/>
 		<div className="container">
-			<Main movies={ Dummy } />	
+			<Main movies={ Movies } />	
 		</div>
 	</div>
 )
