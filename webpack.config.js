@@ -33,7 +33,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: HtmlWebpackTemplate,
 			title: 'Movie Maddness',
-			appMounted: 'app',
+			appMountId: 'app',
 			mobile: true,
 			inject: false
 		})
