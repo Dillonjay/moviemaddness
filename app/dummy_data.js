@@ -62,4 +62,6 @@ const dummyData = [
 		year: 2013,
 		rating: 5
 	}
-]
+];
+
+export default dummyData;
