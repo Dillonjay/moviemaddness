@@ -6,7 +6,18 @@ export default class Main extends React.Component {
 		console.log('this.props.movies', this.props.movies)
 		return (
 			<div>
-				<Movies movies={this.props.movies} />
+			{ 
+				this.props.movies.length 
+				?
+				<div>
+					<Movies movies={this.props.movies} />
+				</div>
+				:
+				<div>
+					<h1>You currently have no movies to display.</h1>
+					<h1>Want to add one ?</h1>
+				</div>
+			}
 			</div>
 		)
 	}
