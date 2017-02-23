@@ -1,10 +1,14 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import Main from './main.js';
+
+if(!localStorage.hasOwnProperty('movies')) localStorage.setItem('movies', JSON.stringify( [] ));
+const movies = JSON.parse( localStorage.getItem('movies') );
 
 const App = () => (
 	<div>
-		<h1>Working</h1>
-		<Button className="btn btn-primary">WORk</Button>
+		<div className="container">
+			<Main movies={movies} />	
+		</div>
 	</div>
 )
 export default App;
