@@ -34,7 +34,8 @@ module.exports = {
 			template: HtmlWebpackTemplate,
 			title: 'Movie Maddness',
 			appMounted: 'app',
-			mobile: true
+			mobile: true,
+			inject: false
 		})
 	]
 };
