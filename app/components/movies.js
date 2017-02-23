@@ -5,13 +5,18 @@ export default class Movies extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-
+			term: ''
 		};
 	};
 	render() {
 		var movies = this.props.movies;
+		console.log(this.state.term)
 		return (
 			<div>
+				<div>
+					<span className="glyphicon glyphicon-search"></span>
+					<input value={ this.state.term } onChange={ (e) => this.setState({ term: e.target.value })} />
+				</div>
 				{
 					movies.map( (movie, i) => {
 						return (
