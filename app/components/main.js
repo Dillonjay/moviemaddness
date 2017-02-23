@@ -7,7 +7,7 @@ import AddMovie from './add_movie.js';
 export default class Main extends React.Component {
 	render() {
 		return (
-			<div>
+			<div className="text-center">
 			{ 
 				this.props.movies.length 
 				?

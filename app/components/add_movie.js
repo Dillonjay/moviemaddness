@@ -25,11 +25,11 @@ export default class AddMovie extends React.Component {
 					</Modal.Header>
 					<Modal.Body>
                   		<form onSubmit={ () => this.add(this.state) }> 
-                  			<input className="col-xs-3"  value={this.state.title} placeholder="Title" onChange={ (e) => this.setState({ title: e.target.value }) } required/>
-                  			<input className="col-xs-3"  value={this.state.genre} placeholder="Genre" onChange={ (e) => this.setState({ genre: e.target.value }) } required/>
-                  			<input className="col-xs-2" type="number" min="1" max="5" value={this.state.rating} placeholder="Rating" onChange={ (e) => this.setState({ rating: e.target.value }) } required/>
-                  			<input className="col-xs-2" type="number" value={this.state.year} placeholder="Year" onChange={ (e) => this.setState({ year: e.target.value }) } required/>
-                  			<input className="col-xs-3"  value={this.state.actors} placeholder="Actors" onChange={ (e) => this.setState({ actors: e.target.value }) } required/>
+                  			<input className="col-xs-3" value={this.state.title} placeholder="Title" onChange={ (e) => this.setState({ title: e.target.value }) } required/>
+                  			<input className="col-xs-3" value={this.state.genre} placeholder="Genre" onChange={ (e) => this.setState({ genre: e.target.value }) } required/>
+                  			<input className="col-xs-2" value={this.state.rating} placeholder="Rating" type="number" min="1" max="5" onChange={ (e) => this.setState({ rating: e.target.value }) } required/>
+                  			<input className="col-xs-2" value={this.state.year} placeholder="Year" type="number" onChange={ (e) => this.setState({ year: e.target.value }) } required/>
+                  			<input className="col-xs-3" value={this.state.actors} placeholder="Actors" onChange={ (e) => this.setState({ actors: e.target.value }) } required/>
                   			<br/>
                   			<Button type="submit"> Add </Button>
                   		</form>

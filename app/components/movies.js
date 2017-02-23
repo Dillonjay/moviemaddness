@@ -18,7 +18,7 @@ export default class Movies extends React.Component {
 						<AddMovie movies={ this.props.movies }/>
 					</div>
 					<span className="glyphicon glyphicon-search"></span>
-					<input value={ this.state.term } onChange={ (e) => this.setState({ term: e.target.value })} />
+					<input value={ this.state.term } placeholder="Search movies" onChange={ (e) => this.setState({ term: e.target.value })} />
 				</div>
 				{
 					movies.map( (movie, i) => {
@@ -35,7 +35,7 @@ export default class Movies extends React.Component {
 							 			<h4>Rating:</h4>
 							 			<p>{movie.rating}</p>
 							 			<h4>Actors:</h4>
-							 			<ul>
+							 			<ul className="list-unstyled">
 							 			{	
 							 				movie.actors.map( (actor, i) => {
 							 					return (<li key={ i }>{ actor }</li>)

@@ -6,7 +6,7 @@ export default class Header extends React.Component {
   render() {
     return(
       <nav className="navbar navbar-page-header bg-primary">
-        <h1>Movie Maddness</h1>
+        <h1 className="text-center">Movie Maddness</h1>
       </nav>
     )
   }
