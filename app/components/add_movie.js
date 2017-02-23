@@ -30,6 +30,7 @@ export default class AddMovie extends React.Component {
                   			<input className="col-xs-2" type="number" min="1" max="5" value={this.state.rating} placeholder="Rating" onChange={ (e) => this.setState({ rating: e.target.value }) } required/>
                   			<input className="col-xs-2" type="number" value={this.state.year} placeholder="Year" onChange={ (e) => this.setState({ year: e.target.value }) } required/>
                   			<input className="col-xs-3"  value={this.state.actors} placeholder="Actors" onChange={ (e) => this.setState({ actors: e.target.value }) } required/>
+                  			<br/>
                   			<Button type="submit"> Add </Button>
                   		</form>
                		</Modal.Body>
@@ -53,7 +54,7 @@ export default class AddMovie extends React.Component {
 				genre: info.genre,
 				rating: info.rating,
 				year: info.year,
-				actors: [info.actors]
+				actors: info.actors.split(',')
 			});
 			localStorage.removeItem('movies')
 			localStorage.setItem('movies', JSON.stringify(this.props.movies));	

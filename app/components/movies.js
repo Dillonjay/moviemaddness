@@ -14,25 +14,27 @@ export default class Movies extends React.Component {
 		return (
 			<div>
 				<div>
-					<div className='container'>
+					<div className="container">
 						<AddMovie movies={ this.props.movies }/>
 					</div>
-					<span className='glyphicon glyphicon-search'></span>
+					<span className="glyphicon glyphicon-search"></span>
 					<input value={ this.state.term } onChange={ (e) => this.setState({ term: e.target.value })} />
 				</div>
 				{
 					movies.map( (movie, i) => {
 						return (
-							<div className='col-sm-6 col-md-3' key={ i }>
-								<div className='panel panel-info'>
-									<div className='panel-heading'>
-             							<h4 className='panel-title'>{ movie.title }</h4>
+							<div className="col-sm-6 col-md-3" key={ i }>
+								<div className="panel panel-info">
+									<div className="panel-heading">
+             							<h4 className="panel-title">{ movie.title }</h4>
             						</div>
             						<div className="panel-body">
 							 			<h2>{movie.genre}</h2>
-							 			<h2>{movie.rating}</h2>
-							 			<h2>{movie.year}</h2>
-							 			<h2>Actors:</h2>
+							 			<h4>Year:</h4>
+							 			<p>{movie.year}</p>
+							 			<h4>Rating:</h4>
+							 			<p>{movie.rating}</p>
+							 			<h4>Actors:</h4>
 							 			<ul>
 							 			{	
 							 				movie.actors.map( (actor, i) => {
@@ -41,7 +43,9 @@ export default class Movies extends React.Component {
 							 			}
 							 			</ul>
 							 		</div>
-							 	<div className='panel-footer'>Footer. Delete Button Eventually</div>
+							 	<div className="panel-footer">
+							 		<Button className="btn btn-danger btn-xs" onClick={ () => console.log('delete')  }>Delete</Button>
+							 	</div>
 							</div>	
 						</div>
 						)
