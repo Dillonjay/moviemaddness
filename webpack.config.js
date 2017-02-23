@@ -15,6 +15,9 @@ module.exports = {
 		port: process.env.PORT,
 		contentBase: paths.app
 	},
+	resolve: {
+		extensions: ['.js','.jsx']
+	},
 	entry: paths.app,
 	output: {
 		path: paths.build,
@@ -23,10 +26,38 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test:/\.jsx?/,
+				test: /\.jsx?/,
 				loader: 'babel-loader',
 				include: paths.app
-			}
+			},
+			{
+				test: /\.css$/,
+				loaders: ['style-loader', 'css-loader']
+			},
+			{
+				test: /\.png$/,
+				loader: 'url-loader'
+			},
+			{
+				test: /\.jpg$/,
+				loader: 'file-loader'
+			},
+			{
+        		test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
+        		loader: 'url-loader'
+      		},
+      		{
+        		test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
+        		loader: 'url-loader'
+      		},
+      		{
+        		test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
+        		loader: 'file-loader'
+      		},
+      		{
+        		test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
+        		loader: 'url-loader'
+      		}
 		]
 	},
 	plugins: [
