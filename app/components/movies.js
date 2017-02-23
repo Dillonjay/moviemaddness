@@ -28,7 +28,7 @@ export default class Movies extends React.Component {
 									<div className="panel-heading">
              							<h4 className="panel-title">{ movie.title }</h4>
             						</div>
-            						<div className="panel-body">
+            						<div className="panel-body" id={ i }>
 							 			<h2>{movie.genre}</h2>
 							 			<h4>Year:</h4>
 							 			<p>{movie.year}</p>
@@ -44,7 +44,7 @@ export default class Movies extends React.Component {
 							 			</ul>
 							 		</div>
 							 	<div className="panel-footer">
-							 		<Button className="btn btn-danger btn-xs" onClick={ () => console.log('delete')  }>Delete</Button>
+							 		<Button className="btn btn-danger btn-xs" onClick={ (e) => this.delete(e.target.parentNode.parentNode.children[1])  }>Delete</Button>
 							 	</div>
 							</div>	
 						</div>
@@ -58,5 +58,14 @@ export default class Movies extends React.Component {
 		return movies.filter( function(movie) {
 			return ( movie.title.toLowerCase().includes(term.toLowerCase()) || movie.genre.toLowerCase().includes(term.toLowerCase()) )
 		})
+	}
+	delete(movie) {
+		console.log(movie.id)
+		this.props.movies.splice(movie.id,1);
+		localStorage.removeItem('movies')
+		localStorage.setItem('movies', JSON.stringify(this.props.movies));
+		setTimeout(function(){
+   			   window.location.reload();
+		},100); 
 	}
 }
