@@ -9,8 +9,7 @@ export default class Movies extends React.Component {
 		};
 	};
 	render() {
-		var movies = this.props.movies;
-		console.log(this.state.term)
+		var movies = this.filterMovies(this.props.movies, this.state.term)
 		return (
 			<div>
 				<div>
@@ -46,5 +45,10 @@ export default class Movies extends React.Component {
 				}
 			</div>
 		)
+	}
+	filterMovies(movies,term) {
+		return movies.filter( function(movie) {
+			return ( movie.title.toLowerCase().includes(term.toLowerCase()) || movie.genre.toLowerCase().includes(term.toLowerCase()) )
+		})
 	}
 }
