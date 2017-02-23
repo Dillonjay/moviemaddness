@@ -13,7 +13,7 @@ const Movies = JSON.parse( localStorage.getItem('movies') );
 const App = () => (
 	<div>
 		<div className="container">
-			<Main movies={ Movies } />	
+			<Main movies={ Dummy } />	
 		</div>
 	</div>
 )

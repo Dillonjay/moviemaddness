@@ -11,13 +11,13 @@ export default class Main extends React.Component {
 				this.props.movies.length 
 				?
 				<div>
-					<Movies movies={this.props.movies} />
+					<Movies movies={ this.props.movies } />
 				</div>
 				:
 				<div>
 					<h1>You currently have no movies to display.</h1>
 					<h1>Want to add one ?</h1>
-					<AddMovie movies={this.props.movies} />
+					<AddMovie movies={ this.props.movies } />
 				</div>
 			}
 			</div>
