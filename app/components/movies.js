@@ -34,7 +34,7 @@ export default class Movies extends React.Component {
 							 			<h2>{movie.year}</h2>
 							 			<h2>Actors:</h2>
 							 			<ul>
-							 			{
+							 			{	
 							 				movie.actors.map( (actor, i) => {
 							 					return (<li key={ i }>{ actor }</li>)
 							 				})

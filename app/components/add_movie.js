@@ -25,16 +25,16 @@ export default class AddMovie extends React.Component {
 					</Modal.Header>
 					<Modal.Body>
                   		<form onSubmit={ () => this.add(this.state) }> 
-                  			<input value={this.state.title} placeholder="Title" onChange={ (e) => this.setState({ title: e.target.value }) } />
-                  			<input value={this.state.genre} placeholder="Genre" onChange={ (e) => this.setState({ genre: e.target.value }) }/>
-                  			<input value={this.state.rating} placeholder="Rating" onChange={ (e) => this.setState({ rating: e.target.value }) }/>
-                  			<input value={this.state.year} placeholder="Year" onChange={ (e) => this.setState({ year: e.target.value }) }/>
-                  			<input value={this.state.actors} placeholder="Actors" onChange={ (e) => this.setState({ actors: e.target.value }) }/>
-                  			<Button type='submit'> Add </Button>
+                  			<input className="col-xs-3"  value={this.state.title} placeholder="Title" onChange={ (e) => this.setState({ title: e.target.value }) } required/>
+                  			<input className="col-xs-3"  value={this.state.genre} placeholder="Genre" onChange={ (e) => this.setState({ genre: e.target.value }) } required/>
+                  			<input className="col-xs-2" type="number" min="1" max="5" value={this.state.rating} placeholder="Rating" onChange={ (e) => this.setState({ rating: e.target.value }) } required/>
+                  			<input className="col-xs-2" type="number" value={this.state.year} placeholder="Year" onChange={ (e) => this.setState({ year: e.target.value }) } required/>
+                  			<input className="col-xs-3"  value={this.state.actors} placeholder="Actors" onChange={ (e) => this.setState({ actors: e.target.value }) } required/>
+                  			<Button type="submit"> Add </Button>
                   		</form>
                		</Modal.Body>
                		<Modal.Footer>
-                  		<Button className='btn btn-primary' onClick={ () => this.setState({ show: false }) }>Close</Button>
+                  		<Button className="btn btn-primary" onClick={ () => this.setState({ show: false }) }>Close</Button>
                		</Modal.Footer>
 				</Modal>
 			</div>
